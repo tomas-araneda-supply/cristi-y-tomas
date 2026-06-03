@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Boda | Cristina & Tomás</title>
+    
+    <!-- Meta tags para compartir en WhatsApp y Redes Sociales (SEO) -->
+    <meta property="og:title" content="¡Nos Casamos! Cristina & Tomás">
+    <meta property="og:description" content="Tras siete años de caminar al mismo compás, elegimos el hoy y el siempre jamás. Acompáñanos el 20 de Noviembre de 2026.">
+    <meta property="og:image" content="Fotos%20Historia/Pau+Esteban_-3.jpg">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+
+    <!-- Fuentes elegantes de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Alex+Brush&display=swap" rel="stylesheet">
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- PORTADA / HERO -->
+    <header class="hero" id="inicio">
+        <div class="hero-bg" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.55)), url('Fotos%20Historia/Pau+Esteban_-3.jpg');"></div>
+        <div class="hero-content">
+            <p class="hero-subtitle">¡Nos casamos!</p>
+            <h1 class="hero-title">Cristina & <span class="bride-name">Tomás</span></h1>
+            <p class="hero-date">20 . 11 . 2026</p>
+            
+            <!-- BOTÓN DE MÚSICA -->
+            <div class="music-control-wrapper">
+                <button id="music-btn" class="music-btn">
+                    <svg class="music-btn-icon play-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+                    <svg class="music-btn-icon pause-icon hidden" viewBox="0 0 24 24"><path fill="currentColor" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                    <span class="music-btn-text">Escuchar Canción</span>
+                </button>
+            </div>
+
+            <div class="scroll-indicator">
+                <span>Desliza para ver más</span>
+                <div class="arrow-down"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CUENTA REGRESIVA -->
+    <section class="countdown-section">
+        <div class="container">
+            <h2 class="section-title italic">Faltan muy pocos días...</h2>
+            <div class="countdown-container" id="countdown">
+                <div class="countdown-box">
+                    <span class="number" id="days">00</span>
+                    <span class="label">Días</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="number" id="hours">00</span>
+                    <span class="label">Horas</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="number" id="minutes">00</span>
+                    <span class="label">Min.</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="number" id="seconds">00</span>
+                    <span class="label">Seg.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BIENVENIDA / CITA DEL PDF -->
+    <section class="welcome-section">
+        <div class="container">
+            <div class="welcome-grid">
+                <div class="welcome-text-side">
+                    <div class="welcome-card">
+                        <!-- SVG Decoración Sakura -->
+                        <svg class="sakura-decor decor-tr" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <defs>
+                            <radialGradient id="sakuraGrad1" cx="50%" cy="50%" r="50%">
+                              <stop offset="0%" stop-color="#AE4C5B" stop-opacity="1" />
+                              <stop offset="50%" stop-color="#F5C3CC" stop-opacity="0.85" />
+                              <stop offset="95%" stop-color="#FDFBF7" stop-opacity="0.1" />
+                              <stop offset="100%" stop-color="#FDFBF7" stop-opacity="0" />
+                            </radialGradient>
+                            <linearGradient id="leafGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stop-color="#909455" stop-opacity="0.85" />
+                              <stop offset="100%" stop-color="#646B42" stop-opacity="0.7" />
+                            </linearGradient>
+                          </defs>
+                          <path d="M50 35 C25 20 15 35 25 55 C35 75 60 65 50 35 Z" fill="url(#leafGrad1)" transform="rotate(-35 50 35)" />
+                          <path d="M60 45 C45 35 35 45 42 60 C49 75 65 70 60 45 Z" fill="url(#leafGrad1)" transform="rotate(25 60 45) scale(0.8)" />
+                          <g transform="translate(60, 40) scale(0.95)">
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad1)" transform="rotate(0)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad1)" transform="rotate(72)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad1)" transform="rotate(144)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad1)" transform="rotate(216)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad1)" transform="rotate(288)" />
+                            <circle cx="0" cy="0" r="2.5" fill="#7E1C4D" />
+                          </g>
+                          <g transform="translate(35, 62) scale(0.65) rotate(35)">
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad1)" transform="rotate(0)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad1)" transform="rotate(72)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad1)" transform="rotate(144)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad1)" transform="rotate(216)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad1)" transform="rotate(288)" />
+                            <circle cx="0" cy="0" r="2" fill="#7E1C4D" />
+                          </g>
+                        </svg>
+                        
+                        <svg class="sakura-decor decor-bl" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <defs>
+                            <radialGradient id="sakuraGrad2" cx="50%" cy="50%" r="50%">
+                              <stop offset="0%" stop-color="#AE4C5B" stop-opacity="1" />
+                              <stop offset="50%" stop-color="#F5C3CC" stop-opacity="0.85" />
+                              <stop offset="95%" stop-color="#FDFBF7" stop-opacity="0.1" />
+                              <stop offset="100%" stop-color="#FDFBF7" stop-opacity="0" />
+                            </radialGradient>
+                            <linearGradient id="leafGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stop-color="#909455" stop-opacity="0.85" />
+                              <stop offset="100%" stop-color="#646B42" stop-opacity="0.7" />
+                            </linearGradient>
+                          </defs>
+                          <path d="M50 65 C25 80 15 65 25 45 C35 25 60 35 50 65 Z" fill="url(#leafGrad2)" transform="rotate(35 50 65)" />
+                          <path d="M40 55 C25 65 15 55 22 40 C29 25 45 30 40 55 Z" fill="url(#leafGrad2)" transform="rotate(-25 40 55) scale(0.8)" />
+                          <g transform="translate(45, 55) scale(0.9) rotate(45)">
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad2)" transform="rotate(0)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad2)" transform="rotate(72)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad2)" transform="rotate(144)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad2)" transform="rotate(216)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad2)" transform="rotate(288)" />
+                            <circle cx="0" cy="0" r="2.5" fill="#7E1C4D" />
+                          </g>
+                        </svg>
+
+                        <p class="welcome-tagline">EQUIPO, AMOR Y COMPROMISO</p>
+                        <p class="welcome-quote">"Tras siete años de caminar al mismo compás, elegimos el hoy y el siempre jamás. Los invitamos a ser parte del comienzo de nuestro proyecto más grande."</p>
+                        <div class="welcome-couple-names">Cristina & Tomás</div>
+                    </div>
+                </div>
+                
+                <!-- Foto Destacada en formato rectangular vertical -->
+                <div class="welcome-image-side">
+                    <img src="Fotos%20Historia/Pau+Esteban_-13.jpg" alt="Cristina & Tomás" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETALLES DEL EVENTO (CUÁNDO Y DÓNDE) -->
+    <section class="details-section" id="detalles">
+        <div class="container">
+            <div class="details-grid-card">
+                <!-- SVG Decoración Sakura -->
+                <svg class="sakura-decor decor-tr" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <radialGradient id="sakuraGrad3" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#AE4C5B" stop-opacity="1" />
+                      <stop offset="50%" stop-color="#F5C3CC" stop-opacity="0.85" />
+                      <stop offset="95%" stop-color="#FDFBF7" stop-opacity="0.1" />
+                      <stop offset="100%" stop-color="#FDFBF7" stop-opacity="0" />
+                    </radialGradient>
+                    <linearGradient id="leafGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#909455" stop-opacity="0.85" />
+                      <stop offset="100%" stop-color="#646B42" stop-opacity="0.7" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M50 35 C25 20 15 35 25 55 C35 75 60 65 50 35 Z" fill="url(#leafGrad3)" transform="rotate(-35 50 35)" />
+                  <path d="M60 45 C45 35 35 45 42 60 C49 75 65 70 60 45 Z" fill="url(#leafGrad3)" transform="rotate(25 60 45) scale(0.8)" />
+                  <g transform="translate(60, 40) scale(0.95)">
+                    <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad3)" transform="rotate(0)" />
+                    <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad3)" transform="rotate(72)" />
+                    <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad3)" transform="rotate(144)" />
+                    <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad3)" transform="rotate(216)" />
+                    <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad3)" transform="rotate(288)" />
+                    <circle cx="0" cy="0" r="2.5" fill="#7E1C4D" />
+                  </g>
+                  <g transform="translate(35, 62) scale(0.65) rotate(35)">
+                    <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad3)" transform="rotate(0)" />
+                    <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad3)" transform="rotate(72)" />
+                    <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad3)" transform="rotate(144)" />
+                    <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad3)" transform="rotate(216)" />
+                    <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad3)" transform="rotate(288)" />
+                    <circle cx="0" cy="0" r="2" fill="#7E1C4D" />
+                  </g>
+                </svg>
+                
+                <svg class="sakura-decor decor-bl" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <radialGradient id="sakuraGrad4" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#AE4C5B" stop-opacity="1" />
+                      <stop offset="50%" stop-color="#F5C3CC" stop-opacity="0.85" />
+                      <stop offset="95%" stop-color="#FDFBF7" stop-opacity="0.1" />
+                      <stop offset="100%" stop-color="#FDFBF7" stop-opacity="0" />
+                    </radialGradient>
+                    <linearGradient id="leafGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#909455" stop-opacity="0.85" />
+                      <stop offset="100%" stop-color="#646B42" stop-opacity="0.7" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M50 65 C25 80 15 65 25 45 C35 25 60 35 50 65 Z" fill="url(#leafGrad4)" transform="rotate(35 50 65)" />
+                  <path d="M40 55 C25 65 15 55 22 40 C29 25 45 30 40 55 Z" fill="url(#leafGrad4)" transform="rotate(-25 40 55) scale(0.8)" />
+                  <g transform="translate(45, 55) scale(0.9) rotate(45)">
+                    <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad4)" transform="rotate(0)" />
+                    <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad4)" transform="rotate(72)" />
+                    <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad4)" transform="rotate(144)" />
+                    <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad4)" transform="rotate(216)" />
+                    <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad4)" transform="rotate(288)" />
+                    <circle cx="0" cy="0" r="2.5" fill="#7E1C4D" />
+                  </g>
+                </svg>
+
+                <div class="details-text-side">
+                    <div class="flower-icon">❀</div>
+                    <h2 class="section-title-elegant">El Matrimonio</h2>
+                    
+                    <div class="info-block-item">
+                        <h3>¿Cuándo?</h3>
+                        <!-- Formulario de Fecha Estilo Calendario Premium -->
+                        <div class="calendar-badge">
+                            <span class="calendar-day-name">V I E R N E S</span>
+                            <span class="calendar-number">20</span>
+                            <span class="calendar-month">NOVIEMBRE 2026</span>
+                            <span class="calendar-time">18:00 Hrs. <span class="calendar-sub-time">(Se solicita puntualidad)</span></span>
+                        </div>
+                    </div>
+
+                    <div class="info-block-item">
+                        <h3>¿Dónde?</h3>
+                        <p class="highlight-text">Centro de Eventos Torres de Paine</p>
+                        <p class="venue-subtext">Colonia de Paine, Paine, Chile</p>
+                    </div>
+                </div>
+
+                <!-- Botones al lado del respectivo mensaje -->
+                <div class="details-buttons-side">
+                    <p class="buttons-guide-text">¿Cómo llegar al evento?</p>
+                    <div class="side-buttons-container">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Centro+de+Eventos+Torres+de+Paine,+Paine,+Chile" target="_blank" class="map-button google-maps">
+                            <svg viewBox="0 0 24 24" class="btn-icon"><path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            Google Maps
+                        </a>
+                        <a href="https://waze.com/ul/h66j365q5m" target="_blank" class="map-button waze">
+                            <svg viewBox="0 0 24 24" class="btn-icon"><path fill="currentColor" d="M20.25 11c-.04-2.8-1.57-5.3-4.1-6.66-2.55-1.38-5.7-.93-7.83 1.12L6.8 4C6.55 3.75 6.13 3.75 5.88 4L4 5.88c-.25.25-.25.67 0 .92l1.6 1.6C3.5 10.5 3.03 13.68 4.4 16.24c1.37 2.55 3.96 4.04 6.78 4.04h1c4.95 0 9-4.04 9.07-9zM12 18.5c-3.58 0-6.5-2.92-6.5-6.5S8.42 5.5 12 5.5s6.5 2.92 6.5 6.5-2.92 6.5-6.5 6.5zm-2.5-6c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm5 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                            Waze
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- DRESS CODE -->
+    <section class="dress-code-section" id="dresscode">
+        <div class="container">
+            <div class="card-stack-layout layout-reversed">
+                <div class="photo-side">
+                    <!-- MAZO DE FOTOS 1 (Ubicación - now beside Dress Code) -->
+                    <div class="section-photo-stack">
+                        <div class="card-stack" style="--max-z: 3;">
+                            <div class="card" style="--rotate: -4deg; --z: 3;" data-src="Fotos Historia/Pau+Esteban_-26.jpg">
+                                <img src="Fotos%20Historia/Pau+Esteban_-26.jpg" alt="Cristina & Tomás 1" class="card-img" loading="lazy">
+                            </div>
+                            <div class="card" style="--rotate: 3deg; --z: 2;" data-src="Fotos Historia/Pau+Esteban_-42.jpg">
+                                <img src="Fotos%20Historia/Pau+Esteban_-42.jpg" alt="Cristina & Tomás 2" class="card-img" loading="lazy">
+                            </div>
+                            <div class="card" style="--rotate: -1deg; --z: 1;" data-src="Fotos Historia/Pau+Esteban_-45.jpg">
+                                <img src="Fotos%20Historia/Pau+Esteban_-45.jpg" alt="Cristina & Tomás 3" class="card-img" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="stack-indicator">Haz clic en la foto para pasar ↻</div>
+                    </div>
+                </div>
+                <div class="card-side">
+                    <div class="dress-code-card">
+                        <!-- SVG Decoración Sakura -->
+                        <svg class="sakura-decor decor-tr" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <defs>
+                            <radialGradient id="sakuraGrad5" cx="50%" cy="50%" r="50%">
+                              <stop offset="0%" stop-color="#AE4C5B" stop-opacity="1" />
+                              <stop offset="50%" stop-color="#F5C3CC" stop-opacity="0.85" />
+                              <stop offset="95%" stop-color="#FDFBF7" stop-opacity="0.1" />
+                              <stop offset="100%" stop-color="#FDFBF7" stop-opacity="0" />
+                            </radialGradient>
+                            <linearGradient id="leafGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stop-color="#909455" stop-opacity="0.85" />
+                              <stop offset="100%" stop-color="#646B42" stop-opacity="0.7" />
+                            </linearGradient>
+                          </defs>
+                          <path d="M50 35 C25 20 15 35 25 55 C35 75 60 65 50 35 Z" fill="url(#leafGrad5)" transform="rotate(-35 50 35)" />
+                          <path d="M60 45 C45 35 35 45 42 60 C49 75 65 70 60 45 Z" fill="url(#leafGrad5)" transform="rotate(25 60 45) scale(0.8)" />
+                          <g transform="translate(60, 40) scale(0.95)">
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad5)" transform="rotate(0)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad5)" transform="rotate(72)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad5)" transform="rotate(144)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad5)" transform="rotate(216)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad5)" transform="rotate(288)" />
+                            <circle cx="0" cy="0" r="2.5" fill="#7E1C4D" />
+                          </g>
+                          <g transform="translate(35, 62) scale(0.65) rotate(35)">
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad5)" transform="rotate(0)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad5)" transform="rotate(72)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad5)" transform="rotate(144)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad5)" transform="rotate(216)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad5)" transform="rotate(288)" />
+                            <circle cx="0" cy="0" r="2" fill="#7E1C4D" />
+                          </g>
+                        </svg>
+                        
+                        <svg class="sakura-decor decor-bl" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <defs>
+                            <radialGradient id="sakuraGrad6" cx="50%" cy="50%" r="50%">
+                              <stop offset="0%" stop-color="#AE4C5B" stop-opacity="1" />
+                              <stop offset="50%" stop-color="#F5C3CC" stop-opacity="0.85" />
+                              <stop offset="95%" stop-color="#FDFBF7" stop-opacity="0.1" />
+                              <stop offset="100%" stop-color="#FDFBF7" stop-opacity="0" />
+                            </radialGradient>
+                            <linearGradient id="leafGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stop-color="#909455" stop-opacity="0.85" />
+                              <stop offset="100%" stop-color="#646B42" stop-opacity="0.7" />
+                            </linearGradient>
+                          </defs>
+                          <path d="M50 65 C25 80 15 65 25 45 C35 25 60 35 50 65 Z" fill="url(#leafGrad6)" transform="rotate(35 50 65)" />
+                          <path d="M40 55 C25 65 15 55 22 40 C29 25 45 30 40 55 Z" fill="url(#leafGrad6)" transform="rotate(-25 40 55) scale(0.8)" />
+                          <g transform="translate(45, 55) scale(0.9) rotate(45)">
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad6)" transform="rotate(0)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad6)" transform="rotate(72)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad6)" transform="rotate(144)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad6)" transform="rotate(216)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad6)" transform="rotate(288)" />
+                            <circle cx="0" cy="0" r="2.5" fill="#7E1C4D" />
+                          </g>
+                        </svg>
+
+                        <h2 class="section-title-elegant">Dress Code</h2>
+                        <p class="dress-style">Formal</p>
+                        <div class="dress-details">
+                            <p>Evitar vestidos de color <strong>Blanco, Beige, Hueso y Negro</strong>.</p>
+                            <p class="green-highlight">🌿 Ideal utilizar tacón grueso para áreas verdes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OBSEQUIOS -->
+    <section class="gifts-section" id="regalos">
+        <div class="container">
+            <div class="card-stack-layout">
+                <div class="card-side">
+                    <div class="gifts-grid-card">
+                        <!-- SVG Decoración Sakura -->
+                        <svg class="sakura-decor decor-tr" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <defs>
+                            <radialGradient id="sakuraGrad7" cx="50%" cy="50%" r="50%">
+                              <stop offset="0%" stop-color="#AE4C5B" stop-opacity="1" />
+                              <stop offset="50%" stop-color="#F5C3CC" stop-opacity="0.85" />
+                              <stop offset="95%" stop-color="#FDFBF7" stop-opacity="0.1" />
+                              <stop offset="100%" stop-color="#FDFBF7" stop-opacity="0" />
+                            </radialGradient>
+                            <linearGradient id="leafGrad7" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stop-color="#909455" stop-opacity="0.85" />
+                              <stop offset="100%" stop-color="#646B42" stop-opacity="0.7" />
+                            </linearGradient>
+                          </defs>
+                          <path d="M50 35 C25 20 15 35 25 55 C35 75 60 65 50 35 Z" fill="url(#leafGrad7)" transform="rotate(-35 50 35)" />
+                          <path d="M60 45 C45 35 35 45 42 60 C49 75 65 70 60 45 Z" fill="url(#leafGrad7)" transform="rotate(25 60 45) scale(0.8)" />
+                          <g transform="translate(60, 40) scale(0.95)">
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad7)" transform="rotate(0)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad7)" transform="rotate(72)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad7)" transform="rotate(144)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad7)" transform="rotate(216)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad7)" transform="rotate(288)" />
+                            <circle cx="0" cy="0" r="2.5" fill="#7E1C4D" />
+                          </g>
+                          <g transform="translate(35, 62) scale(0.65) rotate(35)">
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad7)" transform="rotate(0)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad7)" transform="rotate(72)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad7)" transform="rotate(144)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad7)" transform="rotate(216)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad7)" transform="rotate(288)" />
+                            <circle cx="0" cy="0" r="2" fill="#7E1C4D" />
+                          </g>
+                        </svg>
+                        
+                        <svg class="sakura-decor decor-bl" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <defs>
+                            <radialGradient id="sakuraGrad8" cx="50%" cy="50%" r="50%">
+                              <stop offset="0%" stop-color="#AE4C5B" stop-opacity="1" />
+                              <stop offset="50%" stop-color="#F5C3CC" stop-opacity="0.85" />
+                              <stop offset="95%" stop-color="#FDFBF7" stop-opacity="0.1" />
+                              <stop offset="100%" stop-color="#FDFBF7" stop-opacity="0" />
+                            </radialGradient>
+                            <linearGradient id="leafGrad8" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stop-color="#909455" stop-opacity="0.85" />
+                              <stop offset="100%" stop-color="#646B42" stop-opacity="0.7" />
+                            </linearGradient>
+                          </defs>
+                          <path d="M50 65 C25 80 15 65 25 45 C35 25 60 35 50 65 Z" fill="url(#leafGrad8)" transform="rotate(35 50 65)" />
+                          <path d="M40 55 C25 65 15 55 22 40 C29 25 45 30 40 55 Z" fill="url(#leafGrad8)" transform="rotate(-25 40 55) scale(0.8)" />
+                          <g transform="translate(45, 55) scale(0.9) rotate(45)">
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad8)" transform="rotate(0)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad8)" transform="rotate(72)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad8)" transform="rotate(144)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad8)" transform="rotate(216)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad8)" transform="rotate(288)" />
+                            <circle cx="0" cy="0" r="2.5" fill="#7E1C4D" />
+                          </g>
+                        </svg>
+
+                        <div class="gifts-text-side">
+                            <h2 class="section-title-elegant">Obsequios</h2>
+                            <p class="gifts-intro">Compartir este día con ustedes es nuestro mejor regalo. Sin embargo, si desean colaborar con los primeros pasos de los proyectos que emprenderemos juntos, pueden hacerlo a través de nuestra lista.</p>
+                            
+                            <div class="registry-info">
+                                <p class="registry-store">Lista de Regalos París</p>
+                                <div class="registry-code-display">
+                                    Código de Novios: <strong id="wedding-code">21054755</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botones al lado de sus respectivos mensajes -->
+                        <div class="gifts-buttons-side">
+                            <div class="gifts-actions-container">
+                                <button class="copy-btn-side" id="btn-copy-code">
+                                    <span class="copy-text">Copiar Código</span>
+                                    <svg viewBox="0 0 24 24" class="copy-icon"><path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                                </button>
+                                <a href="https://www.noviosparis.cl" target="_blank" class="gift-link-btn-side">
+                                    Ir a Lista Paris
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-side">
+                    <!-- MAZO DE FOTOS 2 (Dress Code photos - now beside Gifts) -->
+                    <div class="section-photo-stack">
+                        <div class="card-stack" style="--max-z: 2;">
+                            <div class="card" style="--rotate: 3deg; --z: 2;" data-src="Fotos Historia/Pau+Esteban_-50.jpg">
+                                <img src="Fotos%20Historia/Pau+Esteban_-50.jpg" alt="Cristina & Tomás 4" class="card-img" loading="lazy">
+                            </div>
+                            <div class="card" style="--rotate: -3deg; --z: 1;" data-src="Fotos Historia/Pau+Esteban_-55.jpg">
+                                <img src="Fotos%20Historia/Pau+Esteban_-55.jpg" alt="Cristina & Tomás 5" class="card-img" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="stack-indicator">Haz clic en la foto para pasar ↻</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO RSVP -->
+    <section class="rsvp-section" id="rsvp">
+        <div class="container">
+            <div class="card-stack-layout layout-reversed">
+                <div class="photo-side">
+                    <!-- MAZO DE FOTOS 3 (Obsequios photos - now beside RSVP) -->
+                    <div class="section-photo-stack">
+                        <div class="card-stack" style="--max-z: 2;">
+                            <div class="card" style="--rotate: -4deg; --z: 2;" data-src="Fotos Historia/Pau+Esteban_-62.jpg">
+                                <img src="Fotos%20Historia/Pau+Esteban_-62.jpg" alt="Cristina & Tomás 6" class="card-img" loading="lazy">
+                            </div>
+                            <div class="card" style="--rotate: 4deg; --z: 1;" data-src="Fotos Historia/Pau+Esteban_-64.jpg">
+                                <img src="Fotos%20Historia/Pau+Esteban_-64.jpg" alt="Cristina & Tomás 7" class="card-img" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="stack-indicator">Haz clic en la foto para pasar ↻</div>
+                    </div>
+                </div>
+                <div class="card-side">
+                    <div class="rsvp-wrapper">
+                        <!-- SVG Decoración Sakura -->
+                        <svg class="sakura-decor decor-tr" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <defs>
+                            <radialGradient id="sakuraGrad9" cx="50%" cy="50%" r="50%">
+                              <stop offset="0%" stop-color="#AE4C5B" stop-opacity="1" />
+                              <stop offset="50%" stop-color="#F5C3CC" stop-opacity="0.85" />
+                              <stop offset="95%" stop-color="#FDFBF7" stop-opacity="0.1" />
+                              <stop offset="100%" stop-color="#FDFBF7" stop-opacity="0" />
+                            </radialGradient>
+                            <linearGradient id="leafGrad9" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stop-color="#909455" stop-opacity="0.85" />
+                              <stop offset="100%" stop-color="#646B42" stop-opacity="0.7" />
+                            </linearGradient>
+                          </defs>
+                          <path d="M50 35 C25 20 15 35 25 55 C35 75 60 65 50 35 Z" fill="url(#leafGrad9)" transform="rotate(-35 50 35)" />
+                          <path d="M60 45 C45 35 35 45 42 60 C49 75 65 70 60 45 Z" fill="url(#leafGrad9)" transform="rotate(25 60 45) scale(0.8)" />
+                          <g transform="translate(60, 40) scale(0.95)">
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad9)" transform="rotate(0)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad9)" transform="rotate(72)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad9)" transform="rotate(144)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad9)" transform="rotate(216)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad9)" transform="rotate(288)" />
+                            <circle cx="0" cy="0" r="2.5" fill="#7E1C4D" />
+                          </g>
+                          <g transform="translate(35, 62) scale(0.65) rotate(35)">
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad9)" transform="rotate(0)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad9)" transform="rotate(72)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad9)" transform="rotate(144)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad9)" transform="rotate(216)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad9)" transform="rotate(288)" />
+                            <circle cx="0" cy="0" r="2" fill="#7E1C4D" />
+                          </g>
+                        </svg>
+                        
+                        <svg class="sakura-decor decor-bl" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <defs>
+                            <radialGradient id="sakuraGrad10" cx="50%" cy="50%" r="50%">
+                              <stop offset="0%" stop-color="#AE4C5B" stop-opacity="1" />
+                              <stop offset="50%" stop-color="#F5C3CC" stop-opacity="0.85" />
+                              <stop offset="95%" stop-color="#FDFBF7" stop-opacity="0.1" />
+                              <stop offset="100%" stop-color="#FDFBF7" stop-opacity="0" />
+                            </radialGradient>
+                            <linearGradient id="leafGrad10" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stop-color="#909455" stop-opacity="0.85" />
+                              <stop offset="100%" stop-color="#646B42" stop-opacity="0.7" />
+                            </linearGradient>
+                          </defs>
+                          <path d="M50 65 C25 80 15 65 25 45 C35 25 60 35 50 65 Z" fill="url(#leafGrad10)" transform="rotate(35 50 65)" />
+                          <path d="M40 55 C25 65 15 55 22 40 C29 25 45 30 40 55 Z" fill="url(#leafGrad10)" transform="rotate(-25 40 55) scale(0.8)" />
+                          <g transform="translate(45, 55) scale(0.9) rotate(45)">
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad10)" transform="rotate(0)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad10)" transform="rotate(72)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad10)" transform="rotate(144)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad10)" transform="rotate(216)" />
+                            <path d="M0 0 C-6 -12 -10 -15 -5 -18 C-3 -19 0 -17 0 -17 C0 -17 3 -19 5 -18 C10 -15 6 -12 0 0 Z" fill="url(#sakuraGrad10)" transform="rotate(288)" />
+                            <circle cx="0" cy="0" r="2.5" fill="#7E1C4D" />
+                          </g>
+                        </svg>
+
+                        <h2 class="section-title-elegant">¡No olvides confirmar tu asistencia!</h2>
+                        <p class="rsvp-description">Saber que nos acompañarán nos llena de ilusión. Les pedimos de corazón que respondan la encuesta, ya sea para confirmar su presencia o para avisarnos si tendrán algún inconveniente. ¡Su respuesta es vital para nuestra organización!</p>
+                        <p class="rsvp-deadline">Plazo máximo de confirmación: <strong>Viernes 23 de Octubre de 2026</strong></p>
+                        
+                        <div class="rsvp-actions">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfwLqxGhlWeIsTTfBBiCc8rJl2vswVMCGoGaSxyLFaxzM-79w/viewform" target="_blank" class="rsvp-confirm-btn">
+                                Confirmar Asistencia
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-section">
+        <div class="footer-bg" style="background-image: linear-gradient(to top, rgba(126,28,77,0.7), rgba(100,107,66,0.75)), url('Fotos%20Historia/Pau+Esteban_-3.jpg');"></div>
+        <div class="footer-content">
+            <p class="romantic-phrase">Celebrando 7 años de amor y el inicio de una nueva etapa.</p>
+            <p class="footer-couple">Cristina & Tomás</p>
+            <p class="footer-copyright">2026 • Con amor</p>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX / VISUALIZADOR DE FOTOS -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" src="" alt="Vista ampliada">
+    </div>
+
+    <!-- AUDIO DE FONDO -->
+    <audio id="bg-music" src="assets/perfect.mp3" loop preload="auto"></audio>
+
+    <!-- Scripts JS -->
+    <script src="app.js"></script>
+</body>
+</html>

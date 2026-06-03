@@ -1,0 +1,1285 @@
+/* VARIABLES DE DISEÑO (PALETA DE COLORES ELEGIDA) */
+:root {
+    --primary: #7E1C4D;       /* Vino / Burdeos */
+    --secondary: #AE4C5B;     /* Palo Rosa / Rosa Viejo */
+    --accent: #F5C3CC;        /* Rosa Pastel */
+    --olive-dark: #646B42;    /* Verde Oliva Oscuro */
+    --olive-light: #909455;   /* Verde Oliva Claro / Liquen */
+    
+    --bg-main: #FDFBF7;       /* Blanco Marfil / Warm Alabaster */
+    --bg-card: rgba(253, 251, 247, 0.85); /* Carta semi-transparente */
+    --bg-glass: rgba(255, 255, 255, 0.45); /* Efecto Glassmorphism */
+    
+    --text-dark: #2C2A29;     /* Gris cálido muy oscuro */
+    --text-muted: #6B6664;    /* Gris medio */
+    --text-light: #FDFBF7;    /* Blanco Marfil para fondos oscuros */
+    
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Montserrat', Arial, sans-serif;
+    --font-cursive: 'Alex Brush', cursive;
+    
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --transition-fast: all 0.2s ease-in-out;
+}
+
+/* RESET GENERAL Y ESTILOS BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-main);
+    background-image: url('assets/bg_sakura.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(253, 251, 247, 0.70); /* Capa marfil más traslúcida para ver mejor las sakuras */
+    z-index: -1;
+    pointer-events: none;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* COMPONENTES REUTILIZABLES */
+.section-title {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.section-title.italic {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--olive-dark);
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 1. PORTADA / HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    color: var(--text-light);
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center 28%; /* Ajustado verticalmente para centrar rostros en PC */
+    transform: scale(1.01); /* Zoom inicial reducido */
+    animation: zoomBackground 10s ease-out forwards;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 1rem;
+    animation: fadeInUp 1.5s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+.hero-subtitle {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+    letter-spacing: 2px;
+}
+
+.hero-title {
+    font-family: var(--font-serif);
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-title span.bride-name {
+    font-style: italic;
+    color: var(--bg-main);
+}
+
+.hero-date {
+    font-size: 1.2rem;
+    letter-spacing: 6px;
+    font-weight: 400;
+    text-transform: uppercase;
+    border-top: 1px solid rgba(253, 251, 247, 0.5);
+    border-bottom: 1px solid rgba(253, 251, 247, 0.5);
+    padding: 0.6rem 2rem;
+    display: inline-block;
+    margin-top: 1.5rem;
+}
+
+.scroll-indicator {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.arrow-down {
+    width: 20px;
+    height: 20px;
+    border-bottom: 2px solid var(--text-light);
+    border-right: 2px solid var(--text-light);
+    transform: rotate(45deg);
+    margin-top: 0.8rem;
+    animation: bounceArrow 2s infinite;
+}
+
+/* 2. CUENTA REGRESIVA */
+.countdown-section {
+    padding: 3rem 0;
+    background-color: var(--bg-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.countdown-box {
+    background-color: var(--bg-main);
+    border: 1px solid rgba(174, 76, 91, 0.2);
+    box-shadow: 0 10px 30px rgba(110, 30, 71, 0.05);
+    border-radius: 12px;
+    width: 100px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition-smooth);
+}
+
+.countdown-box:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary);
+    box-shadow: 0 15px 35px rgba(110, 30, 71, 0.1);
+}
+
+.countdown-box .number {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+}
+
+.countdown-box .label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+}
+
+/* 3. BIENVENIDA / CITA DEL PDF (GRID DOS COLUMNAS EN PC) */
+.welcome-section {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.welcome-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 3.5rem;
+    align-items: center;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.welcome-text-side {
+    text-align: left;
+}
+
+.welcome-card {
+    position: relative;
+    padding: 3rem 2rem;
+    background-color: var(--bg-card);
+    border-radius: 20px;
+    border: 1px solid rgba(174, 76, 91, 0.12);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+    backdrop-filter: blur(8px);
+}
+
+.welcome-tagline {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--olive-dark);
+    margin-bottom: 1.2rem;
+}
+
+.welcome-quote {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.welcome-couple-names {
+    font-family: var(--font-cursive);
+    font-size: 2.8rem;
+    color: var(--secondary);
+}
+
+/* Imagen rectangular vertical 3:4 que no corta las cabezas */
+.welcome-image-side {
+    border-radius: 24px;
+    overflow: hidden;
+    border: 8px solid white;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 3 / 4;
+    margin: 0 auto;
+}
+
+.welcome-image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    object-position: center 15%; /* Auto enfocarse en la parte superior (las cabezas) */
+}
+
+/* DISEÑO DE CALENDARIO DEL PDF */
+.calendar-badge {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1.5px solid var(--secondary);
+    border-bottom: 1.5px solid var(--secondary);
+    padding: 1.5rem 2.5rem;
+    margin: 0.8rem 0 1.2rem 0;
+    font-family: var(--font-serif);
+    background-color: rgba(174, 76, 91, 0.02);
+}
+
+.calendar-day-name {
+    font-size: 0.85rem;
+    letter-spacing: 6px;
+    color: var(--olive-dark);
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+}
+
+.calendar-number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+}
+
+.calendar-month {
+    font-size: 1.05rem;
+    letter-spacing: 4px;
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+}
+
+.calendar-time {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.calendar-sub-time {
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--secondary);
+    display: block;
+    margin-top: 0.2rem;
+}
+
+/* 4. DETALLES DEL EVENTO (CUÁNDO Y DÓNDE) */
+.details-section {
+    padding: 3rem 0;
+    position: relative;
+}
+
+.details-grid-card {
+    position: relative;
+    background-color: var(--bg-card);
+    border: 1px solid rgba(144, 148, 85, 0.15);
+    border-radius: 20px;
+    padding: 3.5rem;
+    box-shadow: 0 15px 40px rgba(100, 107, 66, 0.05);
+    backdrop-filter: blur(10px);
+    max-width: 850px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.details-text-side {
+    text-align: left;
+}
+
+.section-title-elegant {
+    font-family: var(--font-cursive);
+    font-size: 3.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.info-block-item {
+    margin-bottom: 2rem;
+}
+
+.info-block-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-block-item h3 {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    color: var(--olive-dark);
+    margin-bottom: 0.5rem;
+}
+
+.info-block-item .highlight-text {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.info-block-item .time-text {
+    color: var(--text-muted);
+}
+
+.info-block-item .sub-time {
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--secondary);
+    display: block;
+    margin-top: 0.2rem;
+}
+
+.details-buttons-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid rgba(144, 148, 85, 0.25);
+    padding-left: 3rem;
+    height: 100%;
+}
+
+.buttons-guide-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.side-buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+    max-width: 220px;
+}
+
+.map-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 1.8rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: var(--transition-smooth);
+    border: 1px solid transparent;
+}
+
+.btn-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+}
+
+.google-maps {
+    background-color: var(--olive-dark);
+    color: var(--text-light);
+    border-color: var(--olive-dark);
+    box-shadow: 0 4px 15px rgba(100, 107, 66, 0.2);
+}
+
+.google-maps:hover {
+    background-color: transparent;
+    color: var(--olive-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(100, 107, 66, 0.3);
+}
+
+.waze {
+    background-color: #2F98FC; /* Azul Waze */
+    color: white;
+    border-color: #2F98FC;
+    box-shadow: 0 4px 15px rgba(47, 152, 252, 0.2);
+}
+
+.waze:hover {
+    background-color: transparent;
+    color: #2F98FC;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(47, 152, 252, 0.3);
+}
+
+/* 5. SECCIÓN DRESS CODE */
+.dress-code-section {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.dress-code-card {
+    position: relative;
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: var(--bg-card);
+    border: 1px solid rgba(174, 76, 91, 0.15);
+    border-radius: 20px;
+    padding: 3.5rem 2rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.02);
+    backdrop-filter: blur(10px);
+}
+
+.dress-style {
+    font-size: 1.8rem;
+    font-family: var(--font-serif);
+    color: var(--secondary);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.dress-details p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 0.8rem;
+}
+
+.dress-details p strong {
+    color: var(--text-dark);
+}
+
+.dress-details .green-highlight {
+    color: var(--olive-dark);
+    font-style: italic;
+    margin-top: 1.2rem;
+    font-weight: 500;
+}
+
+/* 6. LISTA DE REGALOS (OBSEQUIOS) */
+.gifts-section {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.gifts-grid-card {
+    position: relative;
+    background-color: var(--bg-card);
+    border: 1px solid rgba(174, 76, 91, 0.15);
+    border-radius: 20px;
+    padding: 3.5rem;
+    box-shadow: 0 15px 40px rgba(110, 30, 71, 0.03);
+    backdrop-filter: blur(10px);
+    max-width: 650px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.gifts-text-side {
+    text-align: left;
+}
+
+.gifts-intro {
+    color: var(--text-muted);
+    margin-bottom: 1.8rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.registry-info {
+    border-top: 1px solid rgba(174, 76, 91, 0.15);
+    padding-top: 1.5rem;
+}
+
+.registry-store {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.registry-code-display {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+.registry-code-display strong {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    color: var(--primary);
+    margin-left: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.gifts-buttons-side {
+    border-left: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.gifts-actions-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+    max-width: 220px;
+}
+
+@media (min-width: 769px) {
+    .gifts-actions-container {
+        flex-direction: row;
+        max-width: 100%;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    .copy-btn-side, .gift-link-btn-side {
+        width: 200px;
+    }
+}
+
+.copy-btn-side {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--secondary);
+    color: var(--text-light);
+    padding: 0 1.5rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    height: 48px;
+    line-height: 1;
+    box-sizing: border-box;
+    box-shadow: 0 4px 15px rgba(174, 76, 91, 0.2);
+    transition: var(--transition-smooth);
+    border: 1px solid transparent;
+}
+
+.copy-btn-side:hover {
+    background-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(174, 76, 91, 0.3);
+}
+
+.copy-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.gift-link-btn-side {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+    color: var(--text-light);
+    padding: 0 1.5rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    height: 48px;
+    line-height: 1;
+    box-sizing: border-box;
+    border: 1px solid var(--primary);
+    box-shadow: 0 4px 15px rgba(126, 28, 77, 0.2);
+    transition: var(--transition-smooth);
+}
+
+.gift-link-btn-side:hover {
+    background-color: transparent;
+    color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(126, 28, 77, 0.35);
+}
+
+/* SISTEMA DE MAZO DE FOTOS (CARD STACK) INTERACTIVO Y APILADO */
+.section-photo-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 4.5rem auto 1.5rem auto;
+    min-height: 420px;
+    width: 100%;
+}
+
+.card-stack {
+    position: relative;
+    width: 280px;
+    height: 350px;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    background-color: var(--bg-main);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    border: 8px solid white;
+    
+    /* TRASLACIÓN AUTOMÁTICA BASADA EN VARIABLES DE ENTORNO --z Y --max-z:
+       Hace que las fotos inferiores sobresalgan hacia abajo e inclinadas, siendo visibles y atractivas */
+    transform: rotate(var(--rotate)) translateY(calc((var(--max-z) - var(--z)) * 9px)) translateX(calc((var(--z) - var(--max-z) + 1) * -5px));
+    
+    z-index: var(--z);
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), z-index 0.6s step-end, box-shadow 0.3s;
+    user-select: none;
+    -webkit-user-drag: none;
+    overflow: hidden;
+}
+
+/* Estilo para las fotos dentro de las pilas (resuelve el problema de pixelación) */
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+    image-rendering: auto;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Efecto hover suave en la pila */
+.card-stack:hover .card {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* Indicador de clic abajo de cada pila */
+.stack-indicator {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--secondary);
+    margin-top: 1.5rem;
+    opacity: 0.75;
+    animation: pulseText 2s infinite;
+    pointer-events: none;
+    text-align: center;
+}
+
+@keyframes pulseText {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+/* Animación de deslizamiento lateral de la carta */
+.card.swipe-out {
+    animation: cardSwipeOut 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+@keyframes cardSwipeOut {
+    0% {
+        transform: rotate(var(--rotate)) translate(0, 0);
+    }
+    50% {
+        transform: rotate(15deg) translate(125%, -20px) scale(1.02);
+    }
+    100% {
+        transform: rotate(0deg) translate(0, 0);
+    }
+}
+
+/* DISEÑO DE COLUMNAS PARA PC (TARJETA + MAZO DE FOTOS) */
+.card-stack-layout {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 3.5rem;
+    align-items: center;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.card-stack-layout.layout-reversed {
+    grid-template-columns: 0.85fr 1.15fr;
+}
+
+.card-stack-layout .section-photo-stack {
+    margin: 0;
+    min-height: auto;
+}
+
+/* 7. FORMULARIO RSVP */
+.rsvp-section {
+    padding: 3rem 0;
+    position: relative;
+    text-align: center;
+}
+
+.rsvp-wrapper {
+    position: relative;
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: var(--bg-card);
+    border-radius: 24px;
+    border: 1px solid rgba(174, 76, 91, 0.15);
+    padding: 4rem 3rem;
+    box-shadow: 0 20px 50px rgba(110, 30, 71, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.rsvp-description {
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rsvp-deadline {
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    margin-bottom: 2.5rem;
+    display: inline-block;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.4rem;
+}
+
+/* Estilo para el Botón de Confirmación de Asistencia (Google Forms) */
+.rsvp-actions {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.rsvp-confirm-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+    color: var(--text-light);
+    border: 1px solid var(--primary);
+    padding: 1.1rem 2.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(126, 28, 77, 0.25);
+    transition: var(--transition-smooth);
+    text-decoration: none;
+}
+
+.rsvp-confirm-btn:hover {
+    background-color: transparent;
+    color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(126, 28, 77, 0.35);
+}
+
+/* Decoraciones de Sakura en Esquinas (Estilo Acuarela) */
+.sakura-decor {
+    position: absolute;
+    width: 85px;
+    height: 85px;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0.95;
+    mix-blend-mode: multiply; /* Fusión suave con fondo */
+}
+
+.sakura-decor.decor-tr {
+    top: -20px;
+    right: -20px;
+}
+
+.sakura-decor.decor-bl {
+    bottom: -20px;
+    left: -20px;
+}
+
+@media (max-width: 768px) {
+    .sakura-decor {
+        width: 65px;
+        height: 65px;
+    }
+    .sakura-decor.decor-tr {
+        top: -12px;
+        right: -12px;
+    }
+    .sakura-decor.decor-bl {
+        bottom: -12px;
+        left: -12px;
+    }
+}
+
+/* 7. FOOTER / PIE DE PÁGINA */
+.footer-section {
+    position: relative;
+    padding: 8rem 0;
+    color: var(--text-light);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.footer-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 1.5rem;
+    max-width: 700px;
+}
+
+.romantic-phrase {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.4rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: var(--accent);
+}
+
+.footer-couple {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+}
+
+.footer-copyright {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: rgba(253, 251, 247, 0.6);
+}
+
+/* 8. LIGHTBOX / VISUALIZADOR DE IMÁGENES */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.93);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+.lightbox.show {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    transform: scale(0.9);
+    transition: transform 0.3s ease-out;
+}
+
+.lightbox.show .lightbox-content {
+    transform: scale(1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    z-index: 1001;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: var(--accent);
+}
+
+/* ANIMACIONES KEYFRAMES */
+@keyframes zoomBackground {
+    from { transform: scale(1.03); }
+    to { transform: scale(1.0); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceArrow {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) rotate(45deg);
+    }
+    40% {
+        transform: translateY(-10px) rotate(45deg);
+    }
+    60% {
+        transform: translateY(-5px) rotate(45deg);
+    }
+}
+
+/* RESPONSIVE DESIGN (MEDIA QUERIES) */
+
+@media (max-width: 900px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .hero-title {
+        font-size: 3.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* REDUCCIÓN DE ESPACIADO EN MÓVILES (Elimina los grandes huecos en blanco) */
+    .countdown-section,
+    .welcome-section,
+    .details-section,
+    .dress-code-section,
+    .gifts-section,
+    .rsvp-section {
+        padding: 3rem 0 !important;
+    }
+
+    .card-stack-layout,
+    .card-stack-layout.layout-reversed {
+        display: block;
+    }
+
+    .hero-bg {
+        background-position: center 15% !important; /* Mantiene encuadre óptimo en celulares */
+    }
+    
+    .section-photo-stack {
+        margin: 2rem auto 0.5rem auto !important;
+        min-height: 330px !important;
+    }
+
+    .welcome-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .welcome-card {
+        margin-bottom: 0 !important;
+    }
+
+    .welcome-image-side {
+        max-width: 290px;
+        aspect-ratio: 3 / 4;
+    }
+
+    .details-grid-card,
+    .gifts-grid-card {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 2.5rem 1.5rem;
+        text-align: center;
+    }
+    
+    .details-text-side,
+    .gifts-text-side {
+        text-align: center;
+    }
+    
+    .details-buttons-side,
+    .gifts-buttons-side {
+        border-left: none;
+        padding-left: 0;
+    }
+    
+    .side-buttons-container,
+    .gifts-actions-container {
+        margin: 0 auto;
+    }
+
+    .rsvp-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-group.full-width,
+    .submit-btn,
+    .form-feedback {
+        grid-column: span 1;
+    }
+    
+    .countdown-container {
+        gap: 0.8rem;
+    }
+    
+    .countdown-box {
+        width: 80px;
+        height: 90px;
+    }
+    
+    .countdown-box .number {
+        font-size: 1.8rem;
+    }
+    
+    .countdown-box .label {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .hero-title {
+        font-size: 2.6rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .section-title-elegant {
+        font-size: 2.8rem;
+    }
+    
+    .rsvp-wrapper {
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .countdown-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .countdown-box {
+        width: 100%;
+        height: 80px;
+    }
+    
+    .countdown-box .number {
+        font-size: 1.5rem;
+    }
+}
+
+/* ---------------------------------------------------------------- */
+/* BOTÓN DE CONTROL DE MÚSICA */
+/* ---------------------------------------------------------------- */
+.music-control-wrapper {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    position: relative;
+}
+
+.music-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1.5px solid rgba(253, 251, 247, 0.4);
+    color: var(--text-light);
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: var(--transition-smooth);
+}
+
+.music-btn:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(126, 28, 77, 0.4);
+}
+
+.music-btn-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.music-btn.playing {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    animation: musicPulseGlow 2s infinite;
+}
+
+.music-btn.playing:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes musicPulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(174, 76, 91, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(174, 76, 91, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(174, 76, 91, 0); }
+}
